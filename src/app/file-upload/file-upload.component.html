@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>Upload CSV File</h2>
+
+  <input type="file" (change)="onFileSelected($event)" accept=".csv" />
+  
+  <button (click)="uploadFile()" [disabled]="!selectedFile || isUploading">
+    {{ isUploading ? 'Uploading...' : 'Upload' }}
+  </button>
+
+  <p *ngIf="isUploading" style="color: blue;">Uploading... Please wait.</p>
+  <p *ngIf="fileUploaded" style="color: green;">File uploaded successfully!</p>
+  <p *ngIf="uploadError" style="color: red;">Error uploading file. Try again.</p>
+</div>

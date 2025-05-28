@@ -1,0 +1,24 @@
+
+
+
+<div class="login-background">
+  <div class="login-container">
+    <h2>Login</h2>
+    <form (submit)="login()" >
+      <p class="register-link">
+        New user? <a routerLink="/register">Register here</a>
+      </p>
+    
+    <!-- #loginForm="ngForm">  -->
+      <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"  [(ngModel)]="username" required placeholder="Enter your username">
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required placeholder="Enter your password">
+      </div>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>

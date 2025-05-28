@@ -1,0 +1,73 @@
+<div class="dashboard-container">
+  <h2 class="heading">UPLOADED CSV DATA</h2>
+
+  <!-- Search Section -->
+  <div *ngIf="results.length" class="search-form">
+    <div>
+      <label class="id"><strong>ID:</strong></label>
+      <input type="text" [(ngModel)]="searchId" placeholder="Enter ID" />
+    </div>
+
+    <div >
+      <label class="fn"><strong>File Name:</strong></label>
+      <input  type="text" [(ngModel)]="searchFileName" placeholder="Enter file name" />
+    </div>
+
+    <div>
+      <label class="stat"><strong>Status:</strong></label>
+      <select [(ngModel)]="searchStatus">
+        <option value="">-- Select Status --</option>
+        <option *ngFor="let option of statusOptions" [value]="option">{{ option }}</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="dat"><strong>From Date:</strong></label>
+      <input type="date" [(ngModel)]="searchFromDate" />
+    </div>
+
+    <div>
+      <label class="dat1"><strong>To Date:</strong></label>
+      <input type="date" [(ngModel)]="searchToDate" />
+    </div>
+    <div class="button-container">
+      
+      <button (click)="onSearch()">Search</button>
+
+      
+    </div>
+    
+    
+  </div>
+
+  <!-- Data Table -->
+  <div *ngIf="filteredResults.length">
+    <table border="1" cellpadding="6" cellspacing="0" style="width: 100%; border-collapse: collapse;">
+      <thead>
+        <tr>
+          <th *ngFor="let header of tableHeaders">{{ header }}</th>
+          <th>Update Status</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of filteredResults; let i = index">
+          <td *ngFor="let header of tableHeaders">{{ row[header] }}</td>
+          <td>
+            <select [(ngModel)]="row.newStatus">
+              <option *ngFor="let option of statusOptions" [value]="option">{{ option }}</option>
+            </select>
+            <button (click)="updateFileStatus(row)">Update</button>
+          </td>
+          <td>
+            <button (click)="deleteFile(row, i)" style="color: white; background-color: red; border: none; padding: 5px 10px; border-radius: 4px;">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  
+</div>

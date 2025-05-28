@@ -1,0 +1,147 @@
+/* Set full page background to orange */
+:host {
+  display: block;
+  background-color:rgba(18, 15, 15, 0.653);
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Container styling */
+.container {
+  background-color: rgb(15, 15, 8);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(219, 209, 209, 0.731);
+  max-width: 70%;
+  margin: auto;
+  margin-top: 50px;
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns buttons to the right */
+  gap: 10px; /* Adds space between buttons */
+}
+
+
+/* Table styling */
+table {
+  width: 50%;
+  border-collapse: collapse;
+  background-color: gold;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+th {
+  background-color: yellow;
+}
+.delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: rgb(136, 130, 130);
+}
+.snackbar-success {
+  background-color: #4caf50 !important; /* green */
+}
+
+.snackbar-error {
+  background-color: #f44336 !important; /* red */
+}
+
+.snackbar-confirm {
+  background-color: #2196f3 !important; /* blue */
+}
+.dashboard-container {
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: flex-end;
+}
+
+.search-form > div {
+  display: flex;
+  flex-direction: column;
+}
+.heading{
+  text-align: center;
+  color: #FFC72C;
+  text-shadow:
+  -1px -1px 0 black,
+   1px -1px 0 black,
+  -1px  1px 0 black,
+   1px  1px 0 black;
+}
+.fn{
+  color: white;
+  text-shadow:
+  -1px -1px 0 black,
+   1px -1px 0 black,
+  -1px  1px 0 black,
+   1px  1px 0 black;
+   
+  
+}
+.stat{
+  color: white;
+  text-shadow:
+  -1px -1px 0 black,
+   1px -1px 0 black,
+  -1px  1px 0 black,
+   1px  1px 0 black;
+  
+  
+}
+
+.date{
+  color: white;
+  text-shadow:
+  -1px -1px 0 black,
+   1px -1px 0 black,
+  -1px  1px 0 black,
+   1px  1px 0 black;
+  
+}
+.id{
+  color: white;
+  text-shadow:
+  -1px -1px 0 black,
+   1px -1px 0 black,
+  -1px  1px 0 black,
+   1px  1px 0 black;
+
+}
+.dat{
+  color: white;
+  text-shadow:
+  -1px -1px 0 black,
+   1px -1px 0 black,
+  -1px  1px 0 black,
+   1px  1px 0 black;
+}
+.dat1{
+  color: white;
+  text-shadow:
+  -1px -1px 0 black,
+   1px -1px 0 black,
+  -1px  1px 0 black,
+   1px  1px 0 black;
+}

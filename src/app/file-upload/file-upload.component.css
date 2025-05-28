@@ -1,0 +1,56 @@
+/* Set full page background to orange */
+:host {
+  display: block;
+  background-color:rgba(18, 15, 15, 0.849);
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Container styling */
+.container {
+  background-color: lightgoldenrodyellow;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(219, 209, 209, 0.731);
+  max-width: 90%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: gold;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+th {
+  background-color: yellow;
+}
+.delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: darkred;
+}
+.snackbar-success {
+  background-color: #4caf50 !important; /* green */
+}
+
+.snackbar-error {
+  background-color: #f44336 !important; /* red */
+}

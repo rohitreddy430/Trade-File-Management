@@ -1,0 +1,79 @@
+<img src="assets/images/reg.png" alt="Homepage Banner" width="100%">
+
+<div class="register-container">
+  <h2>Register</h2>
+  <form (ngSubmit)="register()">
+
+    <!-- Username Field -->
+    <div class="input-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" [(ngModel)]="username" name="username"
+             (keyup)="checkUsername()" placeholder="Enter your username" required pattern="^\S{3,}$">
+      
+      <!-- Error Message: Username Required -->
+      <p class="error" *ngIf="!username.trim()">
+        Username is required.
+      </p>
+
+      <!-- Error Message: Minimum Characters -->
+      <p class="error" *ngIf="username.trim().length < 3 && username.length > 0">
+        Username must be at least 3 characters.
+      </p>
+
+      <!-- Username Availability Check -->
+      <p *ngIf="checkingUsername" style="color: blue;">Checking availability...</p>
+      <p *ngIf="usernameExists" style="color: red;">Username already exists. Please choose another.</p>
+    </div>
+
+    <!-- Password Field -->
+    <div class="input-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" 
+             placeholder="Enter your password"
+             required pattern="^(?=.*[A-Z])(?=.*[@$!%*?&])(?=.*[0-9]).{8,}$">
+      
+      <!-- Error Message: Password Required -->
+      <p class="error" *ngIf="!password.trim()">
+        Password is required.
+      </p>
+
+      <!-- Error Message: Minimum Requirements -->
+      <p class="error" *ngIf="password.trim().length < 8 && password.length > 0">
+        Password must be at least 8 characters, contain one uppercase letter, one special character (&#64;$!%*?&) and one number.
+      </p>
+    </div>
+
+    <!-- Role Selection -->
+    <div class="input-group">
+      <label for="role">Role:</label>
+      <select id="role" [(ngModel)]="role" name="role" required>
+        <option value="" disabled>Select a role</option>
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+      </select>
+
+      <!-- Error Message: Role Required -->
+      <p class="error" *ngIf="role === ''">
+        Please select a role.
+      </p>
+    </div>
+
+    <!-- Admin Passcode (Required only for Admin Role) -->
+    <div class="input-group" *ngIf="role === 'admin'">
+      <label for="passcode">Admin Passcode:</label>
+      <input type="password" id="passcode" [(ngModel)]="adminPasscode" name="adminPasscode"
+             placeholder="Enter admin passcode" required>
+      
+      <!-- Error Message: Passcode Required -->
+      <p class="error" *ngIf="adminPasscode.trim() === ''">
+        Admin passcode is required.
+      </p>
+    </div>
+
+    
+    <button type="submit" >
+      Register
+    </button>
+
+  </form>
+</div>
